@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "hapi": "^15.2.0",
+    "inert": "^4.0.2",
+    "superagent": "^2.3.0"
+  }
+}

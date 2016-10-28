@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Hey Tony</title>
+  </head>
+
+  <body>
+    <div class="trigger-timelines">
+      <button class="trigger-timeline" data-timeline="main1">main1</button>
+      <button class="trigger-timeline" data-timeline="main2">main2</button>
+    </div>
+  </body>
+  <script src="/superagent.js"></script>
+  <script>
+    Array.from(document.querySelectorAll('.trigger-timeline')).forEach(function(button) {
+      button.addEventListener('click', function() {
+        superagent
+          .get('/trigger-timeline?timeline='+ button.getAttribute('data-timeline'))
+          .end(function(err, res){
+            console.log(err, res)
+          });
+
+      });
+    });
+  </script>
+</html>
